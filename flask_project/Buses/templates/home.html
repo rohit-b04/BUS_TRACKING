@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block homepage %}
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('{{ url_for('static', filename='background.jpg') }}');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+</style>
+
+  <div class="container">
+    <h1>Welcome to Mahabus Homepage</h1>
+    <button onclick="location.href='{{ url_for('login') }}'">Enter Bus Arrival Update</button>
+    <button onclick="location.href='{{ url_for('user_entries') }}'">Show Bus Data</button>
+  </div>
+
+{% endblock %}

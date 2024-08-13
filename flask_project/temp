@@ -1,0 +1,18 @@
+ hr, minte, sec = predictor(time_in_sec, setbit, form.cur_stop.data)
+
+                #print(f'{time_in_sec} {setbit} {form.cur_stop.data}')
+                # req_time_str = f"{hour:02d}:{minute:02d}"
+                final_calculated_time = f"{hr}:{minte}:{sec}"
+                route_id_str = cur_route_id[0] #To extract the route id as string from tuple of multiple route_ids from bus_routes
+                next_predictions = predict_time_to_destination(form.cur_stop.data, form.dest_stop.data, time_in_sec, 0)
+                #pass predicted_time=as required by the varun's ML algo
+
+                entry_to_create=bus_info(
+                    bus_id=form.bus_id.data,
+                    current_stop=form.cur_stop.data,
+                    dest_stop=form.dest_stop.data,
+                    req_time_to_arrive_at_cur=final_calculated_time,
+                    route_id=route_id_str
+                )
+                db.session.add(entry_to_create)
+                db.session.commit()

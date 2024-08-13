@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Prediction</title>
+    <link rel="stylesheet" href="mpl.css">
+    <style>
+              body {
+        background: linear-gradient(rgba(97, 97, 97, 0.5), rgba(0, 0, 0, 0.744)),url('{{ url_for('static', filename='bus.jpg')}}');
+        background-size: cover;
+        background-position: 100px 5px;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        background-color: rgba(255, 255, 255, 0.8); /* Transparent white */
+        max-width: 400px;
+        margin: 200px auto;
+        padding: 20px;
+        border-radius: 10px;
+        /*margin-right: 20px;  Adjust this value as needed */
+
+    }
+
+    form {
+        text-align: left;
+        font-weight: bold;
+
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff; /* Blue color, change as needed */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #0056b3; /* Darker blue on hove*/
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <label for="from">From:</label>
+            <select name="from" id="from">
+                <option value=""></option>
+                <option value="kopargaon">kopargaon</option>
+                <option value="pune">Pune</option>
+                <option value="shirdi">shirdi</option>
+                <option value="yeola">Yeola</option>
+            </select>
+            <br>
+            <label for="to">To:</label>
+            <select name="to" id="to">
+                <option value=""></option>
+                <option value="kopargaon">kopargaon</option>
+                <option value="pune">Pune</option>
+                <option value="shirdi">Shirdi</option>
+                <option value="yeola">Yeola</option>
+            </select>
+            <br>
+           <button type="submit">Proceed</button>
+        </form>
+    </div>
+</body>
+</html>

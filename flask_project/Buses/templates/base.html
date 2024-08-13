@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available buses</title>
+    <style>
+        .table_style {
+            margin: 20px;
+            padding: 20px;
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        .table_style th, .table_style td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .table_style th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .table_style tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .column-style {
+            color: #333;
+            /* Add specific styles for your columns here */
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+          }
+          button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+          }
+          button:hover {
+            background-color: #45a049;
+          }
+    </style>
+</head>
+<body>
+
+    <p>
+        {% block table_name %}
+
+        {% endblock %}
+        {% block countNo %} {% endblock %}
+        {% block homepage %}
+
+        {% endblock %}
+        <br>
+        <br>
+        {% block goBack %}
+
+        {% endblock %}
+    </p>
+
+
+</body>
+</html>
+
+
+
